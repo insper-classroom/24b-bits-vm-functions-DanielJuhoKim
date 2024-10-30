@@ -449,9 +449,9 @@ movw (%A),%A
 jmp
 nop
 Main.main:
-;; push constant 15 - 25
-leaw $15,%A
-movw %A,%D
+;; push temp 0 - 25
+leaw $5,%A
+movw (%A),%D
 leaw $SP,%A
 movw (%A),%A
 movw %D,(%A)
@@ -459,9 +459,9 @@ leaw $SP,%A
 movw (%A),%D
 incw %D
 movw %D,(%A)
-;; push constant 5 - 26
-leaw $5,%A
-movw %A,%D
+;; push temp 1 - 26
+leaw $6,%A
+movw (%A),%D
 leaw $SP,%A
 movw (%A),%A
 movw %D,(%A)
@@ -470,7 +470,7 @@ movw (%A),%D
 incw %D
 movw %D,(%A)
 ; chamada de funcao: div
-leaw $div-ret-25581891,%A
+leaw $div-ret-27650932,%A
 movw %A,%D
 leaw $SP,%A
 movw (%A),%A
@@ -529,15 +529,15 @@ movw %D,(%A)
 leaw $div,%A
 jmp
 nop
-div-ret-25581891:
-;; pop temp 1 - 27
+div-ret-27650932:
+;; pop temp 2 - 27
 leaw $SP,%A
 movw (%A),%D
 decw %D
 movw %D,(%A)
 movw (%A),%A
 movw (%A),%D
-leaw $6,%A
+leaw $7,%A
 movw %D,(%A)
 ; Label
 Main.while:
